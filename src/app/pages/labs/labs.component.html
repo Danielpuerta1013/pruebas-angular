@@ -1,0 +1,41 @@
+<div class="container">
+    <p>labs works!</p>
+    <h1>daniel</h1>
+    <h2>{{welcome}}</h2>
+
+    <h1>a</h1>
+    <hr>
+    <h2>{{'hola'.repeat(4)}}</h2>
+    <p>la suma de 3+3 es {{3+3}}</p>
+    <p>hola soy {{name()}} y mi edad es {{edad}}</p>
+    <hr>
+    <img [src]="persona().avatar" alt="">
+    <p>{{persona().nombre}}</p>
+    <button (click)="clickHandler()">Click me</button>
+    <button (dblclick)="clickHandler()">Double me</button>
+    <p>(change)</p>
+    <input type="number" [value]="persona().edad" (change)="changeHandler($event)">
+    <hr>
+    <p>(keyDown)</p>
+    <input type="text" [value]="persona().nombre" (keydown)="keydownHandler($event)">
+    <input type="text" [value]="persona().nombre" (keydown.shift.t)="clickHandler()">
+    <hr>
+    <h1>Signals</h1>
+    <input type="text" [value]="name()" (change)="changeHandler($event)">
+    <p>{{name()}}</p>
+    <ul>
+        <p>total:{{tasks().length}}</p>
+        <li *ngFor="let task of tasks() index as i">
+            {{i+1}} {{task}}
+        </li>
+    </ul>
+    <hr>
+    <div *ngIf="1!==1">
+        mi contenido
+    </div>
+    <div *ngIf="name().toLowerCase()==='daniel'">
+        mi contenido2
+    </div>
+    
+
+</div>
